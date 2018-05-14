@@ -59,8 +59,7 @@ public class Bmi extends AppCompatActivity implements View.OnClickListener {
         bundle.putString("KEY_HEIGHT", field_height.getText().toString());
         bundle.putString("KEY_WEIGHT", field_weight.getText().toString());
 
-        Log.d(TAG, "身高:"+field_height.getText().toString());
-        Log.d(TAG, "體重:"+field_weight.getText().toString());
+        Log.d(TAG, "身高:"+field_height.getText().toString() + ", 體重:"+field_weight.getText().toString());
 
         intent.putExtras(bundle);
         startActivity(intent);
