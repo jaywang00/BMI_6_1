@@ -25,23 +25,17 @@ public class Report extends AppCompatActivity implements View.OnClickListener{
         calc();
     }
 
-
     private void findViews(){
-
         result = findViewById(R.id.result);
         suggest = findViewById(R.id.suggest);
         back = findViewById(R.id.back);
     }
 
     private void setListeners(){
-
         back.setOnClickListener(this);
     }
 
-
     private void calc(){
-
-
         DecimalFormat df = new DecimalFormat("0.00");
 
         Intent intent = getIntent();
@@ -60,7 +54,6 @@ public class Report extends AppCompatActivity implements View.OnClickListener{
         else
             suggest.setText(R.string.advice_average);
     }
-
 
     @Override
     public void onClick(View v) {
