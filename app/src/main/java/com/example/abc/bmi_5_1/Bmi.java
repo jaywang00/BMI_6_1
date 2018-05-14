@@ -15,8 +15,7 @@ public class Bmi extends AppCompatActivity implements View.OnClickListener {
     private EditText field_height;
     private EditText field_weight;
     private Button submit;
-    private TextView result;
-    private TextView suggest;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +29,12 @@ public class Bmi extends AppCompatActivity implements View.OnClickListener {
         submit = findViewById(R.id.submit);
         field_height = findViewById(R.id.field_height);
         field_weight = findViewById(R.id.field_weight);
-        result = findViewById(R.id.result);
-        suggest = findViewById(R.id.suggest);
+
+
     }
 
     private void setListeners(){
+
         submit.setOnClickListener(this);
     }
 
@@ -57,6 +57,12 @@ public class Bmi extends AppCompatActivity implements View.OnClickListener {
 
         Intent intent = new Intent();
         intent.setClass(Bmi.this,Report.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("KEY_HEIGHT", field_height.getText().toString());
+        bundle.putString("KEY_WEIGHT", field_weight.getText().toString());
+        intent.putExtras(bundle);
+
         startActivity(intent);
     }
 }
